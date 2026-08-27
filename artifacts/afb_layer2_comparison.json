@@ -1,0 +1,223 @@
+{
+  "grade_scores": {
+    "afb_grade_v1": {
+      "0": 0.0,
+      "1": 0.125,
+      "2": 0.25,
+      "3": 0.5,
+      "4": 0.75,
+      "5": 1.0
+    },
+    "ridit": {
+      "0": 0.2719680464778504,
+      "1": 0.5649963689179375,
+      "2": 0.6721132897603486,
+      "3": 0.8021060275962236,
+      "4": 0.9019607843137254,
+      "5": 0.9789397240377631
+    },
+    "polychoric": {
+      "0": 0.0,
+      "1": 0.4739773378038599,
+      "2": 0.6025870154308465,
+      "3": 0.6859208105093068,
+      "4": 0.9398078449561844,
+      "5": 1.0
+    },
+    "optimal_scaling": {
+      "0": 0.0,
+      "1": 0.4739426920651728,
+      "2": 0.6025777214402032,
+      "3": 0.6859154532517505,
+      "4": 0.9397981224891954,
+      "5": 1.0
+    },
+    "isotonic_anchor": {
+      "0": 0.0,
+      "1": 0.8484600276367961,
+      "2": 0.8848008942147512,
+      "3": 0.9124695225394671,
+      "4": 0.9530553511942209,
+      "5": 1.0
+    },
+    "pls_cxr": {
+      "0": 0.0,
+      "1": 1.0,
+      "2": 1.0,
+      "3": 1.0,
+      "4": 1.0,
+      "5": 1.0
+    }
+  },
+  "method_meta": {
+    "ridit": {
+      "n": 1377,
+      "grade_counts": {
+        "0": 749,
+        "1": 58,
+        "2": 237,
+        "3": 121,
+        "4": 154,
+        "5": 58
+      }
+    },
+    "polychoric": {
+      "n_used": 1377,
+      "rho_afb_d3": 0.7865121437144152,
+      "rho_afb_d4": 0.7280435957809633,
+      "polychoric_error": null,
+      "cond_mean_anchor": {
+        "0": -1.0644434188591863,
+        "1": 0.45897808240306026,
+        "2": 0.8723454156919681,
+        "3": 1.1401904898732227,
+        "4": 1.9562146672319658,
+        "5": 2.149679662047827
+      }
+    },
+    "optimal_scaling": {
+      "n_used": 1377,
+      "correlation": 0.6441257791601794,
+      "optimizer_success": true
+    },
+    "isotonic_anchor": {
+      "n_used": 1377,
+      "grade_median_anchor": {
+        "0": -2.053823268566913,
+        "1": 1.6971474207095563,
+        "2": 1.8578073468306353,
+        "3": 1.9801280342854863,
+        "4": 2.1595545820605175,
+        "5": 2.367092940914394
+      }
+    },
+    "pls_cxr": {
+      "n_used": 314,
+      "n_studies_with_cxr": 813,
+      "grade_counts": {
+        "1": 33,
+        "2": 129,
+        "3": 59,
+        "4": 71,
+        "5": 22
+      },
+      "lv1_centroids_raw": {
+        "1": 5.789649561834556,
+        "2": 1.6103080103060132,
+        "3": 1.9702506102993274,
+        "4": -4.865292948114136,
+        "5": -7.708961557301908
+      },
+      "lv1_centroids_isotonic": {
+        "1": -0.6408092645952296,
+        "2": -0.6408092645952296,
+        "3": -0.6408092645952296,
+        "4": -0.6408092645952296,
+        "5": -0.6408092645952296
+      },
+      "monotonicity_corrected": true,
+      "pls_x_variance_explained": 0.06330365230472812,
+      "n_images": 4351,
+      "n_studies": 813,
+      "feature_dim": 1024
+    }
+  },
+  "monotone": {
+    "afb_grade_v1": true,
+    "ridit": true,
+    "polychoric": true,
+    "optimal_scaling": true,
+    "isotonic_anchor": true,
+    "pls_cxr": true
+  },
+  "raw_table": [
+    {
+      "raw_text": "No AFB seen",
+      "ordinal": 0,
+      "ordinal_label": "0_neg",
+      "afb_grade_v1": 0.0,
+      "ridit": 0.271968,
+      "pls_cxr": 0.0,
+      "polychoric": 0.0,
+      "optimal_scaling": 0.0,
+      "isotonic_anchor": 0.0
+    },
+    {
+      "raw_text": "Negative for AFB",
+      "ordinal": 0,
+      "ordinal_label": "0_neg",
+      "afb_grade_v1": 0.0,
+      "ridit": 0.271968,
+      "pls_cxr": 0.0,
+      "polychoric": 0.0,
+      "optimal_scaling": 0.0,
+      "isotonic_anchor": 0.0
+    },
+    {
+      "raw_text": "Doubtful Repeat test (Trace)",
+      "ordinal": 1,
+      "ordinal_label": "1_trace",
+      "afb_grade_v1": 0.125,
+      "ridit": 0.564996,
+      "pls_cxr": 1.0,
+      "polychoric": 0.473977,
+      "optimal_scaling": 0.473943,
+      "isotonic_anchor": 0.84846
+    },
+    {
+      "raw_text": "Rare (1+)",
+      "ordinal": 2,
+      "ordinal_label": "2_1plus",
+      "afb_grade_v1": 0.25,
+      "ridit": 0.672113,
+      "pls_cxr": 1.0,
+      "polychoric": 0.602587,
+      "optimal_scaling": 0.602578,
+      "isotonic_anchor": 0.884801
+    },
+    {
+      "raw_text": "Few (2+)",
+      "ordinal": 3,
+      "ordinal_label": "3_2plus",
+      "afb_grade_v1": 0.5,
+      "ridit": 0.802106,
+      "pls_cxr": 1.0,
+      "polychoric": 0.685921,
+      "optimal_scaling": 0.685915,
+      "isotonic_anchor": 0.91247
+    },
+    {
+      "raw_text": "Moderate (3+)",
+      "ordinal": 4,
+      "ordinal_label": "4_3plus",
+      "afb_grade_v1": 0.75,
+      "ridit": 0.901961,
+      "pls_cxr": 1.0,
+      "polychoric": 0.939808,
+      "optimal_scaling": 0.939798,
+      "isotonic_anchor": 0.953055
+    },
+    {
+      "raw_text": "Numerous (4+)",
+      "ordinal": 5,
+      "ordinal_label": "5_4plus",
+      "afb_grade_v1": 1.0,
+      "ridit": 0.97894,
+      "pls_cxr": 1.0,
+      "polychoric": 1.0,
+      "optimal_scaling": 1.0,
+      "isotonic_anchor": 1.0
+    },
+    {
+      "raw_text": "Positive for AFB",
+      "ordinal": 5,
+      "ordinal_label": "5_4plus",
+      "afb_grade_v1": 1.0,
+      "ridit": 0.97894,
+      "pls_cxr": 1.0,
+      "polychoric": 1.0,
+      "optimal_scaling": 1.0,
+      "isotonic_anchor": 1.0
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "sample_id": "DEMO-002",
+  "schema_version": "1.0",
+  "deidentified": true,
+  "ct_reading": {
+    "modality": "CT",
+    "laterality_hint": "left",
+    "findings": [
+      "fibronodular_sequelae"
+    ],
+    "cavity": false,
+    "tree_in_bud": false,
+    "consolidation": false,
+    "fibronodular_sequelae": true,
+    "activity_label": "inactive",
+    "reader_note": "Synthetic demo; no PHI."
+  },
+  "sputum_profile": {
+    "afb_smear": "negative",
+    "culture": "negative",
+    "naat": "not_done",
+    "infectivity_proxy": "none",
+    "days_from_index": 14
+  },
+  "image_processing": {
+    "pipeline": "clahe_stretch_256",
+    "lite_max_px": 256,
+    "preview_path": "data/coarse_256/IMG-002_256.png",
+    "forbidden": [
+      "full_res",
+      "dicom",
+      "original_png"
+    ]
+  }
+}

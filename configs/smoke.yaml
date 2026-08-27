@@ -1,0 +1,45 @@
+# Smoke / CPU-friendly profile (pipeline verification only)
+# Full training: use configs/default.yaml on a CUDA machine
+
+data:
+  dicom_dir: "<REDACTED_PATH> ViT_Infectivity"
+  dicom_raw_dir: "<REDACTED_PATH> CXR_Active Image"
+  dicom_work_dir: "<REDACTED_PATH> ViT_Infectivity"
+  sputum_dir: "<REDACTED_PATH> SPUTUM DATA"
+  ct_dir: "<REDACTED_PATH> CT Reading Collection GUI"
+  labels_csv: "artifacts/labels_v1.csv"
+  registry_mode: "union"
+  hospital: "gangnam"
+  max_studies: 64          # limit cohort for quick smoke
+  slice_mode: first         # smoke: 1 slice/study for speed
+
+labels:
+  afb_scheme: "afb_grade_v1"
+  pcr_scheme: "pcr_soft_v1"
+  culture_transform: "loginv"
+  date_window_months: 2
+
+preprocess:
+  image_size: 256
+  clahe: true
+  clahe_clip_limit: 0.03
+  resize_mode: stretch
+
+model:
+  name: vit_small_patch16_224   # faster than base on CPU
+  pretrained: true
+  num_heads: 6
+
+train:
+  seed: 42
+  n_folds: 5
+  epochs: 1
+  batch_size: 4
+  lr: 1.0e-4
+  weight_decay: 0.01
+  amp: false                    # CPU
+  patience: 3
+  num_workers: 0
+
+eval:
+  binary_threshold: 0.5

@@ -1,0 +1,60 @@
+# ============================================================
+# PATIENT DATA / PHI  --  MUST NEVER BE COMMITTED
+# ============================================================
+# Any derived tables contain study_no / patient_reg_no / clinical values.
+artifacts/**
+!artifacts/.gitkeep
+# Aggregate-only stats (no patient identifiers) are allowed back in explicitly:
+!artifacts/afb_layer2_comparison.json
+!artifacts/afb_layer2_comparison.md
+
+# Raw / derived medical images (never track image bytes)
+*.jpg
+*.jpeg
+*.png
+*.bmp
+*.tif
+*.tiff
+*.dcm
+*.dicom
+*.nii
+*.nii.gz
+
+# Any local copies of the external patient data folders (defensive)
+**/CXR Collecting Folder*/
+**/*SPUTUM*DATA*/
+**/*CT Reading*/
+**/*cxr.json
+**/*_ct_reading.json
+**/*_chest_ct.json
+
+# Model checkpoints / heavy weights
+*.pt
+*.pth
+*.ckpt
+*.onnx
+*.safetensors
+checkpoints/
+runs/
+wandb/
+lightning_logs/
+
+# Python / venv
+__pycache__/
+*.pyc
+.venv/
+venv/
+.env
+*.log
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.ipynb_checkpoints/
+
+# Lite: never commit PHI / full-res
+*.dcm
+*.dicom
+**/full_res/
+**/original/
+.env

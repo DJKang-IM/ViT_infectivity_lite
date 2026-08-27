@@ -1,0 +1,52 @@
+# Infectivity_ViT v1 default configuration
+
+data:
+  # 학습용 DICOM (헤더 작업 후): <REDACTED_PATH> ViT_Infectivity
+  # 원본 RAW: <REDACTED_PATH> CXR_Active Image
+  dicom_dir: "<REDACTED_PATH> ViT_Infectivity"
+  dicom_raw_dir: "<REDACTED_PATH> CXR_Active Image"
+  dicom_work_dir: "<REDACTED_PATH> ViT_Infectivity"
+  sputum_dir: "<REDACTED_PATH> SPUTUM DATA"
+  ct_dir: "<REDACTED_PATH> CT Reading Collection GUI"
+  crawlfix_csv: "<REDACTED_PATH>"  # 이진 참조·검증용
+  labels_csv: "artifacts/labels_v1.csv"
+  registry_mode: "union"
+  hospital: "gangnam"   # study 1xxxx only; exclude 나은 3xxxx
+  slice_mode: all        # all | first (study당 전체 슬라이스 vs 1장)
+  cv_split_unit: image   # image (Phase III 동일) | study
+
+labels:
+  afb_scheme: "afb_grade_v1"
+  pcr_scheme: "pcr_soft_v1"        # D2 TB-PCR and D7 RIF-PCR
+  solid_transform: "loginv"        # D3 고체 배양
+  liquid_transform: "twostep"      # D4 액체 배양 (option C)
+  date_window_months: 2
+
+preprocess:
+  image_size: 256
+  clahe: true
+  clahe_clip_limit: 0.03
+  resize_mode: stretch
+  lung_crop: false
+
+model:
+  name: vit_base_patch16_224
+  pretrained: true
+  num_heads: 6   # D1,D2,D3,D4,D5,D7 (D6 NTM reserved)
+
+train:
+  seed: 42
+  n_folds: 5
+  epochs: 30
+  smoke_epochs: 2
+  batch_size: 8
+  lr: 1.0e-4
+  weight_decay: 0.01
+  amp: true
+  patience: 5
+  num_workers: 0
+  balance_study_sampling: false  # image CV: 슬라이스 균등 샘플링
+
+eval:
+  binary_threshold: 0.5
+  study_aggregation: null        # image CV: 슬라이스 단위 metric (Phase III style)

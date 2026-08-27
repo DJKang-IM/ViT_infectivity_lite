@@ -1,0 +1,26 @@
+{
+  "dataset": "ViT_infectivity_lite",
+  "n_json_samples": 3,
+  "n_preview_images": 10,
+  "lite_max_px": 256,
+  "samples": [
+    "DEMO-001",
+    "DEMO-002",
+    "DEMO-003"
+  ],
+  "images": [
+    "IMG-001_256.png",
+    "IMG-002_256.png",
+    "IMG-003_256.png",
+    "IMG-004_256.png",
+    "IMG-005_256.png",
+    "IMG-006_256.png",
+    "IMG-007_256.png",
+    "IMG-008_256.png",
+    "IMG-009_256.png",
+    "IMG-010_256.png"
+  ],
+  "license": "CC BY-NC-SA 4.0",
+  "gated_full": "https://github.com/DJKang-IM/ViT_infectivity",
+  "note": "Synthetic demos only. No PHI. Bots get metadata only."
+}
